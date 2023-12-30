@@ -54,4 +54,13 @@ router.get('/discord/redirect', passport.authenticate('discord'), (req, res) => 
     res.send(200);
 });
 
+router.post('/google', passport.authenticate('google', { scope: ['profile', 'email'] }), (req, res) => {
+    // console.log('user logged in');
+    res.send(200);
+});
+
+router.get('/google/callback', passport.authenticate('google'), (req, res) => {
+    res.send(200);
+});
+
 module.exports = router;
