@@ -11,9 +11,9 @@ This repository contains the Express API
 - Connecting to MongoDB using [Mongoose](https://mongoosejs.com/docs/)
 - Authentication using [Passport.js] featuring local strategy, OAuth2 using Discord, and OAuth using Google
 - Hashing Passwords using [bcrypt](https://www.npmjs.com/package/bcrypt)
-- Unit Testing examples using [Jest](https://jestjs.io/). See `src/__tests__`
 - Authentication using [Passport.js](https://www.passportjs.org/) featuring local strategy, OAuth2 using Discord, and OAuth using Google
 - Hashing Passwords using [bcrypt](https://www.npmjs.com/package/bcrypt).
+- Unit Testing examples using [Jest](https://jestjs.io/). See `src/__tests__`
 
 ## Installation
 
