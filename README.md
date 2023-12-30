@@ -9,7 +9,7 @@ This repository contains the Express API
 - Examples of custom middleware implementation
 - Cookies, Sessions & Session Store Implementation
 - Connecting to MongoDB using [Mongoose](https://mongoosejs.com/docs/)
-- Authentication using [Passport.js]featuring local strategy, OAuth2 using Discord, and OAuth using Google
+- Authentication using [Passport.js](https://www.passportjs.org/) featuring local strategy, OAuth2 using Discord, and OAuth using Google
 - Hashing Passwords using [bcrypt](https://www.npmjs.com/package/bcrypt).
 
 ## Installation
