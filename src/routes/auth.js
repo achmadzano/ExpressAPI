@@ -45,4 +45,13 @@ router.post('/register', async (req, res) => {
     }
 });
 
+router.post('/discord', passport.authenticate('discord'), (req, res) => {
+    // console.log('user logged in');
+    res.send(200);
+});
+
+router.get('/discord/redirect', passport.authenticate('discord'), (req, res) => {
+    res.send(200);
+});
+
 module.exports = router;
