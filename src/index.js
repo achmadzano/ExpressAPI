@@ -5,7 +5,8 @@ const MongoStore = require('connect-mongo');
 const passport = require('passport');
 // require('./strategies/local');
 require('./strategies/discord');
-require('./strategies/google');
+// require('./strategies/google');
+// require('./strategies/github');
 
 // Routes
 const groceriesRoute = require('./routes/groceries');

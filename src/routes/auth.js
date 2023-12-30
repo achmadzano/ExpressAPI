@@ -1,9 +1,11 @@
 const { Router } = require('express');
 const passport = require('passport');
 const user = require('../database/schemas/user');
+const { authRegisterController } = require('../controllers/auth');
 
 const { hashPassword } = require('../utils/helpers');
 const { comparePasswords } = require('../utils/helpers');
+const authRegisterController = require('../controllers/auth');
 
 const router = Router();
 
@@ -29,21 +31,7 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
     res.send(200);
 });
 
-router.post('/register', async (req, res) => {
-    const { email } = req.body;
-    const userDB = await user.findOne({ $or:[{ email }] });
-    if (userDB){
-        res.status(400).send('Username or email already exists');
-    } else {
-        const password = hashPassword(req.body.password);
-        console.log(password);
-        const newUser = await user.create({
-            password,
-            email,
-        });
-        res.send(201);
-    }
-});
+router.post('/register', authRegisterController);
 
 router.post('/discord', passport.authenticate('discord'), (req, res) => {
     // console.log('user logged in');
@@ -60,6 +48,14 @@ router.post('/google', passport.authenticate('google', { scope: ['profile', 'ema
 });
 
 router.get('/google/callback', passport.authenticate('google'), (req, res) => {
+    res.send(200);
+});
+
+router.get('/github', passport.authenticate('github', { scope: ['user:email'] }), (req, res) => {
+    res.send(200);
+});
+
+router.get('/github/redirect', passport.authenticate('github'), (req, res) => {
     res.send(200);
 });
 
