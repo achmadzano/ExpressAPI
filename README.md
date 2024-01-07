@@ -4,7 +4,7 @@ This repository contains the Express API
 
 ## Features
 
-- Examples of `GET` and `POST` requests
+- Examples of `GET`, `POST`, `PUT`, and `DELETE` requests
 - Modular routers & organized endpoints. See `src/routes`
 - Examples of custom middleware implementation
 - Cookies, Sessions & Session Store Implementation

@@ -3,7 +3,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const passport = require('passport');
-// require('./strategies/local');
+require('./strategies/local');
 require('./strategies/discord');
 // require('./strategies/google');
 // require('./strategies/github');

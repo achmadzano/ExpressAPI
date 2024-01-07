@@ -5,7 +5,6 @@ const { authRegisterController } = require('../controllers/auth');
 
 const { hashPassword } = require('../utils/helpers');
 const { comparePasswords } = require('../utils/helpers');
-const authRegisterController = require('../controllers/auth');
 
 const router = Router();
 

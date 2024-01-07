@@ -35,6 +35,23 @@ router.get('/:item', (request, response) => {
   response.send(groceryItem);
 });
 
+// put for each item
+router.put('/:item', (request, response) => {
+  const { item } = request.params;
+  const { quantity } = request.body;
+  const groceryItem = groceryList.find((g) => g.item === item);
+  groceryItem.quantity = quantity;
+  //give it a status code
+  response.send(200);
+});
+
+router.delete('/:item', (request, response) => {
+  const { item } = request.params;
+  const index = groceryList.findIndex((g) => g.item === item);
+  groceryList.splice(index, 1);
+  response.send(200);
+});
+
 router.post('/', (request, response) => {
   console.log(request.body);
   groceryList.push(request.body);
